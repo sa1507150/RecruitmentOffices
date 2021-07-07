@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Status</th>
+        <th scope="col">Issue</th>
+        <th scope="col">Submission Id</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let recordStatus of recordStatuses">
+        <td>{{ recordStatus.serialNo }}</td>
+        <td>{{ recordStatus.status }}</td>
+        <td>{{ recordStatus.issue }}</td>
+        <td>{{ recordStatus.submissionId }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Worker Name</th>
+        <th scope="col">Passport</th>
+        <th scope="col">Visa No</th>
+        <th scope="col">Sponsor Name</th>
+        <th scope="col">Arrival Date</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Record Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.serialNo }}</td>
+        <td>{{ record.workerName }}</td>
+        <td>{{ record.passport }}</td>
+        <td>{{ record.visaNo }}</td>
+        <td>{{ record.sponsorName }}</td>
+        <td>{{ record.arrivalDate }}</td>
+        <td>{{ record.remark }}</td>
+        <td><button class="btn btn-info" (click)="showRecordStatus(record.serialNo)"> Show Record Status</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
