@@ -11,8 +11,8 @@
       <li class="nav-item">
         <a href="/recruitment" class="nav-link" *ngIf="isLoggedIn" routerLink="recruitment">Recruitment Office</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" (click)="onPressBack()"  routerLinkActive="active">Back <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" (click)="onPressBack()" *ngIf="isLoggedIn" routerLinkActive="active">Back</a>
       </li>
     </ul>
 
