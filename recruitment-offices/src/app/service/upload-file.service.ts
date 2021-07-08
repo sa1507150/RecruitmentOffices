@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import { HttpClient, HttpRequest, HttpHeaders, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {RecruitmentUserService} from "./recruitment-user.service";
 import {RecruitmentUserComponent} from "../recruitment-user/recruitment-user.component";
+import {TokenStorageService} from "./token-storage.service";
 
 @Injectable()
-export class UploadFileService {
+export class UploadFileService implements OnInit{
 
   private baseUrl = 'http://localhost:9191';
+  currentUser: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private token:TokenStorageService) {
   }
 
 
@@ -18,13 +20,21 @@ export class UploadFileService {
 
     formData.append('file', file);
 
+    const user = this.token.getUser();
+    const username = user.username;
+    console.log(user);
+    console.log(username);
 
-    const req = new HttpRequest('POST', `${this.baseUrl}/upload/222`, formData, {
+    const req = new HttpRequest('POST', `${this.baseUrl}/upload/${user.username}`, formData, {
       reportProgress: true,
       responseType: 'json'
     });
 
     return this.http.request(req);
+  }
+
+  ngOnInit() {
+    this.currentUser = this.token.getUser();
   }
 
 }

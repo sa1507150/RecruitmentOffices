@@ -29,6 +29,17 @@ import { RecruitmentComponent } from './recruitment/recruitment.component';
 import { AdlsaComponent } from './adlsa/adlsa.component';
 import { SubmissionRecordComponent } from './submission-record/submission-record.component';
 import {SubmissionRecordService} from "./service/submission-record.service";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import {AuthService} from "./service/auth.service";
+import {AuthInterceptor, authInterceptorProviders} from "./helper/auth.interceptor";
+import {UserService} from "./service/user.service";
+import {TokenStorageService} from "./service/token-storage.service";
 
 
 @NgModule({
@@ -47,7 +58,14 @@ import {SubmissionRecordService} from "./service/submission-record.service";
     AdlsaUserComponent,
     RecruitmentComponent,
     AdlsaComponent,
-    SubmissionRecordComponent
+    SubmissionRecordComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent
   ],
     imports: [
         BrowserModule,
@@ -56,7 +74,7 @@ import {SubmissionRecordService} from "./service/submission-record.service";
         FormsModule,
         ReactiveFormsModule
     ],
-  providers: [OfficeServiceService, RecordService, RecordStatusService, SubmissionService, FileService, UploadFileService, OfficeSubmissionService, RecordRecordStatusService, RecruitmentUserService, AdlsaUserService, SubmissionRecordService],
+  providers: [OfficeServiceService, RecordService, RecordStatusService, SubmissionService, FileService, UploadFileService, OfficeSubmissionService, RecordRecordStatusService, RecruitmentUserService, AdlsaUserService, SubmissionRecordService, AuthService, AuthInterceptor, UserService, TokenStorageService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

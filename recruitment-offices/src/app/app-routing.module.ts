@@ -14,6 +14,18 @@ import {RecruitmentUserComponent} from "./recruitment-user/recruitment-user.comp
 import {RecruitmentComponent} from "./recruitment/recruitment.component";
 import {AdlsaComponent} from "./adlsa/adlsa.component";
 import {SubmissionRecordComponent} from "./submission-record/submission-record.component";
+import {BoardAdminComponent} from "./board-admin/board-admin.component";
+import {BoardModeratorComponent} from "./board-moderator/board-moderator.component";
+import {BoardUserComponent} from "./board-user/board-user.component";
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+
+
+
+
+
 
 
 const routes: Routes = [
@@ -30,7 +42,15 @@ const routes: Routes = [
   { path: 'submissions/:labourLicenseNo', component: OfficeSubmissionsComponent},
   { path: 'adlsaUsers', component: AdlsaUserComponent},
   { path: 'recruitmentUsers', component: RecruitmentUserComponent},
-  { path: 'records/:id', component: SubmissionRecordComponent}
+  { path: 'records/:id', component: SubmissionRecordComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];
 

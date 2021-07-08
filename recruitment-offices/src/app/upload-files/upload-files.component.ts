@@ -18,6 +18,7 @@ export class UploadFilesComponent implements OnInit {
   progress = 0;
   message = '';
 
+
   constructor(private uploadService: UploadFileService) { }
 
   selectFile(event: any): void {
