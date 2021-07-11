@@ -21,9 +21,6 @@ export class UploadFileService implements OnInit{
     formData.append('file', file);
 
     const user = this.token.getUser();
-    const username = user.username;
-    console.log(user);
-    console.log(username);
 
     const req = new HttpRequest('POST', `${this.baseUrl}/upload/${user.username}`, formData, {
       reportProgress: true,

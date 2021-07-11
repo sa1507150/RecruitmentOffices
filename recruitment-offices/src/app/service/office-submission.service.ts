@@ -15,11 +15,11 @@ export class OfficeSubmissionService {
   }
 
   public findAll(): Observable<Submission[]> {
-    return this.http.get<Submission[]>(`${this.submissionsUrl}/submissions`);
+    return this.http.get<Submission[]>(`${this.submissionsUrl}`);
   }
 
   public save(submission: Submission) {
-    return this.http.post<Submission>((`${this.submissionsUrl}/submissions`), submission);
+    return this.http.post<Submission>((`${this.submissionsUrl}`), submission);
   }
 
   public getOfficeSubmissions(id: number): Submission[]{
